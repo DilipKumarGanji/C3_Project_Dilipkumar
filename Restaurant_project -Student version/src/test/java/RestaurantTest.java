@@ -5,6 +5,8 @@ import org.mockito.Mockito;
 import org.mockito.junit.jupiter.MockitoExtension;
 
 import java.time.LocalTime;
+import java.util.ArrayList;
+import java.util.List;
 
 import static org.junit.jupiter.api.Assertions.*;
 
@@ -85,6 +87,17 @@ class RestaurantTest {
 
     @Test
     public void customer_when_add_the_required_dishes_display_the_total_amount(){
+        List<Item> menu = new ArrayList<Item>();
+        Item it1 = new Item("Sweet corn soup",119);
+        Item it2 = new Item("Vegetable lasagne", 269);
+        Item it3 = new Item("Biryani", 200);
+        menu.add(it1);
+        menu.add(it2);
+        menu.add(it3);
+
+        List<String> items = new ArrayList<String>();
+        items.add("Sweet corn soup");
+        items.add("Vegetable lasagne");
 
         Restaurant r = Mockito.spy(restaurant);
         Mockito.when(r.getMenu()).thenReturn(menu);
