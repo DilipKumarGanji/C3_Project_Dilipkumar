@@ -83,6 +83,13 @@ class RestaurantTest {
         restaurant.addToMenu("Vegetable lasagne", 269);
     }
 
+    @Test
+    public void customer_when_add_the_required_dishes_display_the_total_amount(){
 
+        Restaurant r = Mockito.spy(restaurant);
+        Mockito.when(r.getMenu()).thenReturn(menu);
+        Double  totalAmount = r.getTotalamount(items);
+        assertEquals(388,totalAmount);
+    }
 
 }
