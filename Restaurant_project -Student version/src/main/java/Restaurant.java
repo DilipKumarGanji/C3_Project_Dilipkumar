@@ -74,6 +74,18 @@ public class Restaurant {
     }
 
 
-
+    public Double getTotalamount(List<String> items){
+        Double amount =0.00;
+        List<Item> menuItems = new ArrayList<Item>();
+        menuItems=getMenu();
+        for(Object item : items){
+            for(Item it  : menuItems){
+                if(it.getName()==item){
+                    amount = amount + it.getamount();
+                }
+            }
+        }
+        return amount;
+    }
 
 }

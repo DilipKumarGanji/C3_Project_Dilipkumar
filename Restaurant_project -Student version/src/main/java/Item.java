@@ -11,6 +11,7 @@ public class Item {
         return name;
     }
 
+    public int getamount(){return price;}
 
     @Override
     public String toString(){
